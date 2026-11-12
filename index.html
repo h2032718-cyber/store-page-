@@ -1,0 +1,15 @@
+        const isOpen = (now.getDay() !== storeConfig.closedDay) && (now.getHours() >= storeConfig.openHour && now.getHours() < storeConfig.closeHour);
+        const el = document.getElementById('store-status');
+        el.textContent = isOpen ? '✅ مفتوح الآن' : '❌ مغلق';
+        el.className = 'badge ' + (isOpen ? 'badge-open' : 'badge-closed');
+    }
+    updateStatus();
+    setInterval(updateStatus, 60000);
+
+    function toggleChat() {
+        document.getElementById('chatWindow').classList.toggle('open');
+    }
+</script>
+
+</body>
+</html>
